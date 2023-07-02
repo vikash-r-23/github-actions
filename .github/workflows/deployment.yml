@@ -3,12 +3,12 @@ on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./github-actions/example
     steps:
       - name: Code Checkout
         uses: actions/checkout@v3
-      - name: Change Dir
-        working-directory: ./example
-        run: echo "PWD chnaged"
       - name: Install Dependencies
         run: npm install
       - name: Lint
