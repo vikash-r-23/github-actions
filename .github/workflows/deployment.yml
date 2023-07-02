@@ -7,7 +7,8 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v3
       - name: Change Dir
-        run: cd ./example
+        working-directory: ./example
+        run: echo "PWD chnaged"
       - name: Install Dependencies
         run: npm install
       - name: Lint
